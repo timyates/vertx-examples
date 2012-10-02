@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <title>vert.x mysql sample page</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css">
+  <style type="text/css">
+    #messages {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <header class="navbar-inner">
+      <div class="container"><h1>vert.x mysql sample page</h1></div>
+    </header>
+  </div>
+  <section id="messages" class="container">
+    <h1>messages</h1>
+    <ul>
+      {{#messages}}
+      <li data-mysql-id="{{_id}}">{{name}}: {{message}}</li>
+      {{/messages}}
+    </ul>
+  </section>
+  <section class="container">
+    <h1>message form</h1>
+    <form method="POST" action="." accept-charset="UTF-8" class="well form-inline">
+      <label for="name">name</label> <input id="name" name="name" type="text" placeholder="name">
+      <label for="text">text</label> <input id="text" name="text" type="text" placeholder="text">
+      <input type="submit" value="submit" class="btn">
+    </form>
+  </section>
+</body>
+</html>
